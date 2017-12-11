@@ -21,12 +21,13 @@
 const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
+const merge = require('lodash.merge');
 
 const configPath =
   process.env.CONFIG || path.join(paths.appPath, 'react-scripts.config.js');
 const loadedConfig = fs.existsSync(configPath) ? require(configPath) : {};
 
-const localConfig = Object.assign(
+const localConfig = merge(
   {
     devPort: 3000,
     openBrowser: true,
@@ -36,6 +37,7 @@ const localConfig = Object.assign(
       presets: [require.resolve('babel-preset-react-app')],
       // @remove-on-eject-end
     },
+    postcssPlugins: [require('postcss-flexbugs-fixes')],
   },
   loadedConfig
 );
