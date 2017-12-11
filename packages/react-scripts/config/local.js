@@ -28,6 +28,7 @@ const loadedConfig = fs.existsSync(configPath) ? require(configPath) : {};
 
 const localConfig = Object.assign(
   {
+    devPort: 3000,
     openBrowser: true,
     babel: {
       // @remove-on-eject-begin
