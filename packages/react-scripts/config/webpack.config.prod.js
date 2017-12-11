@@ -99,6 +99,9 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
+      // Entry should be at `<root>/src/index.js`
+      // This automatically adds React Hot Loader
+      Application: paths.resolve('src/index.js'),
       // @remove-on-eject-begin
       // Resolve Babel runtime relative to react-scripts.
       // It usually still works on npm 3 without this but it would be

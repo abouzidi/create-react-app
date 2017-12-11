@@ -47,8 +47,8 @@ module.exports = {
     // Add the Webpack Hot Reload entries
     require.resolve('react-hot-loader/patch'),
     require.resolve('webpack-hot-middleware/client') + '?reload=true',
-    // Finally, this is your app's code:
-    paths.appIndexJs,
+    // Finally, this is the app index with hot-reloading for free
+    require.resolve('./app.index.js'),
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
@@ -85,6 +85,9 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
+      // Entry should be at `<root>/src/index.js`
+      // This automatically adds React Hot Loader
+      Application: paths.resolve('src/index.js'),
       // @remove-on-eject-begin
       // Resolve Babel runtime relative to react-scripts.
       // It usually still works on npm 3 without this but it would be
