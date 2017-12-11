@@ -174,7 +174,7 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: [paths.appSrc, __dirname],
             loader: require.resolve('babel-loader'),
             options: Object.assign(
               {
@@ -213,6 +213,8 @@ module.exports = {
                         importLoaders: 1,
                         minimize: true,
                         sourceMap: shouldUseSourceMap,
+                        localIdentName: '[name]_[local]_[hash:base64:10]',
+                        modules: true,
                       },
                     },
                     {
@@ -223,6 +225,9 @@ module.exports = {
                         ident: 'postcss',
                         plugins: () => [
                           require('postcss-flexbugs-fixes'),
+                          require('postcss-import'),
+                          require('postcss-nested'),
+                          require('postcss-simple-vars'),
                           autoprefixer({
                             browsers: [
                               '>1%',
