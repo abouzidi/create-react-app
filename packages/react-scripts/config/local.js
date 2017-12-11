@@ -18,9 +18,24 @@
 // @remove-on-eject-end
 'use strict';
 
-const localConfig = {
-  openBrowser: false,
-};
+const fs = require('fs');
+const path = require('path');
+const paths = require('./paths');
+
+const configPath = path.join(paths.appPath, 'react-scripts.config.js');
+const loadedConfig = fs.existsSync(configPath) ? require(configPath) : {};
+
+const localConfig = Object.assign(
+  {
+    openBrowser: false,
+    babel: {
+      // @remove-on-eject-begin
+      babelrc: false,
+      presets: [require.resolve('babel-preset-react-app')],
+      // @remove-on-eject-end
+    },
+  },
+  loadedConfig
+);
 
 module.exports = localConfig;
-// @remove-on-eject-end

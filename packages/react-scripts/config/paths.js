@@ -93,6 +93,7 @@ const reactScriptsLinked =
 
 // config before publish: we're in ./packages/react-scripts/config/
 if (
+  !process.env.RS_SKIP_OWN &&
   !reactScriptsLinked &&
   __dirname.indexOf(path.join('packages', 'react-scripts', 'config')) !== -1
 ) {
