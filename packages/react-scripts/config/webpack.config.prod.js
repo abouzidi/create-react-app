@@ -171,6 +171,11 @@ module.exports = {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
+          // Add an EJS loader
+          {
+            test: /\.ejs$/,
+            use: [require.resolve('ejs-loader')],
+          },
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
