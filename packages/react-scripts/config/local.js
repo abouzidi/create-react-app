@@ -37,6 +37,7 @@ const localConfig = merge(
       presets: [require.resolve('babel-preset-react-app')],
       // @remove-on-eject-end
     },
+    htmlPlugin: {},
     postcssPlugins: [require('postcss-flexbugs-fixes')],
   },
   loadedConfig
