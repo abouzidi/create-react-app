@@ -22,12 +22,13 @@ const fs = require('fs');
 const path = require('path');
 const paths = require('./paths');
 
-const configPath = path.join(paths.appPath, 'react-scripts.config.js');
+const configPath =
+  process.env.CONFIG || path.join(paths.appPath, 'react-scripts.config.js');
 const loadedConfig = fs.existsSync(configPath) ? require(configPath) : {};
 
 const localConfig = Object.assign(
   {
-    openBrowser: false,
+    openBrowser: true,
     babel: {
       // @remove-on-eject-begin
       babelrc: false,
