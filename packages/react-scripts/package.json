@@ -1,14 +1,14 @@
 {
-  "name": "react-scripts",
+  "name": "react-scripts-config",
   "version": "1.0.17",
   "description": "Configuration and scripts for Create React App.",
-  "repository": "facebookincubator/create-react-app",
+  "repository": "paritytech/create-react-app",
   "license": "MIT",
   "engines": {
     "node": ">=6"
   },
   "bugs": {
-    "url": "https://github.com/facebookincubator/create-react-app/issues"
+    "url": "https://github.com/paritytech/create-react-app/issues"
   },
   "files": [
     "bin",
@@ -18,7 +18,7 @@
     "utils"
   ],
   "bin": {
-    "react-scripts": "./bin/react-scripts.js"
+    "react-scripts-config": "./bin/react-scripts.js"
   },
   "dependencies": {
     "autoprefixer": "7.1.6",
