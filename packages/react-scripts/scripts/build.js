@@ -151,8 +151,11 @@ function build(previousFileSizes) {
 }
 
 function copyPublicFolder() {
-  fs.copySync(paths.appPublic, paths.appBuild, {
-    dereference: true,
-    filter: file => file !== paths.appHtml,
-  });
+  // First ensure the public directory exists
+  if (fs.existsSync(paths.appPublic)) {
+    fs.copySync(paths.appPublic, paths.appBuild, {
+      dereference: true,
+      filter: file => file !== paths.appHtml,
+    });
+  }
 }
