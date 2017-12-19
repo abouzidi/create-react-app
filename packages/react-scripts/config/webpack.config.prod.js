@@ -273,7 +273,7 @@ module.exports = {
           // Make sure to add the new loader(s) before the "file" loader.
         ],
       },
-    ],
+    ].filter(rule => rule),
   },
   plugins: [
     // Makes some environment variables available in index.html.
