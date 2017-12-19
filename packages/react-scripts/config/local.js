@@ -40,6 +40,9 @@ const localConfig = merge(
     htmlPlugin: {},
     postcssPlugins: [require('postcss-flexbugs-fixes')],
     alias: {},
+    webpack: {
+      eslint: true,
+    },
   },
   loadedConfig
 );
