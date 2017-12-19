@@ -39,6 +39,7 @@ const localConfig = merge(
     },
     htmlPlugin: {},
     postcssPlugins: [require('postcss-flexbugs-fixes')],
+    alias: {},
   },
   loadedConfig
 );
