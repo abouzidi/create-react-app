@@ -46,7 +46,8 @@ module.exports = {
     require.resolve('./polyfills'),
     // Add the Webpack Hot Reload entries
     require.resolve('react-hot-loader/patch'),
-    require.resolve('webpack-hot-middleware/client') + '?reload=true',
+    // require.resolve('webpack-hot-middleware/client') + '?reload=true',
+    require.resolve('react-dev-utils/webpackHotDevClient'),
     // Finally, this is the app index with hot-reloading for free
     require.resolve('./app.index.js'),
     // We include the app code last so that if there is a runtime error during
