@@ -9,7 +9,6 @@
 
 const babelJest = require('babel-jest');
 
-module.exports = babelJest.createTransformer({
-  presets: [require.resolve('babel-preset-react-app')],
-  babelrc: false,
-});
+const localConfig = require('../local');
+
+module.exports = babelJest.createTransformer(localConfig.babel);
