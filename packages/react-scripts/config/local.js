@@ -42,6 +42,7 @@ const localConfig = merge(
     alias: {},
     webpack: {
       eslint: true,
+      modules: [],
       plugins: [],
     },
   },

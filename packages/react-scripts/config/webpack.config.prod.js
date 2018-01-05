@@ -184,7 +184,9 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: [paths.appSrc, __dirname],
+            include: [paths.appSrc, __dirname].concat(
+              localConfig.webpack.modules
+            ),
             loader: require.resolve('babel-loader'),
             options: Object.assign(
               {
